@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
   ifstream fin(filename.c_str());
   if(!fin){
     cerr << "Cannot open the file." << endl;
-    
+    exit(1);
   }
   
   // Read the file. And find ";".
