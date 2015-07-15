@@ -14,11 +14,11 @@ set(CMAKE_BUILD_TYPE Release)
 # プロジェクト名
 project(P1-1)
 
-# Mainビルド
-add_executable (main main.cpp)
-
 # 出力先の設定
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../) 
+
+# Mainビルド
+add_executable (main main.cpp)
 
 # ターゲットリンクライブラリ
 target_link_libraries(main m)
