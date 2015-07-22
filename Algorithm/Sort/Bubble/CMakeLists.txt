@@ -9,7 +9,7 @@ set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ..)
 
 
-project(heap)
+project(bubble_sort)
 
 add_executable(main main.cpp)
 
