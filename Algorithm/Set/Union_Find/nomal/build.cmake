@@ -11,7 +11,7 @@ if(NOT EXISTS ${build_dir})
 endif()
 
 execute_process(
-  COMMAND make
+  COMMAND make -j4
   WORKING_DIRECTORY ${build_dir}
   )
 
