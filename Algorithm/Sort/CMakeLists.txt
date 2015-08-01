@@ -9,8 +9,12 @@ set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ..)
 
 
-project(bubble_sort)
+project(sort)
+
+add_subdirectory(Data)
+add_subdirectory(Time)
+add_subdirectory(Sort)
 
 add_executable(main main.cpp)
 
-target_link_libraries(main m)
+target_link_libraries(main Data Time Sort m)
