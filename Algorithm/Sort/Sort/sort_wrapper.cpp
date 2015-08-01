@@ -2,6 +2,11 @@
 
 using namespace std;
 
+void Sort::show_times()
+{
+  cout << "It takes ... " << GetTime() << " [sec] ." << endl;
+}
+
 void Sort::ShowData(bool flg)
 {
   if(flg){
@@ -16,11 +21,4 @@ void Sort::ShowData(bool flg)
       cout << data_raw[i] << " ";
     cout << endl;
   }
-}
-
-void Sort::swap(int i, int j)
-{
-  int tmp = data[i];
-  data[i] = data[j];
-  data[j] = tmp;
 }

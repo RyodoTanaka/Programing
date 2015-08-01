@@ -15,5 +15,31 @@ void Sort::Bubble()
   }
   TimerStop();
   cout << "Finish Bubble Sort" << endl;
-  cout << "It takes ... " << GetTime() << " [sec] ." << endl;
+  show_times();
+}
+
+void Sort::Quick()
+{
+  cout << "Start Quick Sort" << endl;
+  TimerStart();
+
+  TimerStop();
+  show_times();
+}
+
+inline void Sort::swap(int i, int j)
+{
+  int tmp = data[i];
+  data[i] = data[j];
+  data[j] = tmp;
+}
+
+inline int Sort::find_pivot(int i, int j)
+{
+  int max = data[i];
+  for(int k=i; k<=j; k++){
+    if(data[k] > max)
+      max = data[k]; 
+  }
+  return max;
 }
