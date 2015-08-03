@@ -16,3 +16,6 @@ bash build.sh
 - ヒープ木
 - 二分探索木
 - Union-Find
+
+- バブルソート(Bubble Sort)
+- クイックソート(Quick Sort)
