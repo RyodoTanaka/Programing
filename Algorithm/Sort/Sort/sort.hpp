@@ -11,8 +11,8 @@ class Sort : private Data, private Time
 {
 public :
   Sort(){ 
-    data_raw = new int [n]; 
-    for(int i=0; i<n; i++)
+    data_raw = new int [data_size]; 
+    for(int i=0; i<data_size; i++)
       data_raw[i] = data[i];
   }
   ~Sort(){ delete [] data_raw; }
@@ -25,11 +25,13 @@ private :
 
   int* data_raw;
 
+  void quick_sort(int i, int j);
   void show_times();
 
   void swap(int i, int j);
   int find_pivot(int i, int j);
-  void partition();
+  int partition(int i, int j, int pivot);
+  
 };
 
 #endif

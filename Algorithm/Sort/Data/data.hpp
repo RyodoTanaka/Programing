@@ -7,11 +7,11 @@
 class Data{
 public :
 
-  int n;     // number of datas
+  int data_size;     // number of datas
   int* data;
 
   Data();
-  ~Data(){ delete [] data; }
+  ~Data();
 
 private :
 
