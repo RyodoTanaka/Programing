@@ -1,0 +1,8 @@
+#aaa = aaa
+OPTION=0
+AUTHOR=INCHOKI #Author
+PATH=/aaa/aaa/bbb | aaabbbccc
+DIRPATH=aaa/bbb , 12345
+PARAMETER = xyz && aaaaaa
+VERSION = 0.1 # version
+TEST	=     AAA
