@@ -8,7 +8,7 @@ set(CMAKE_BUILD_TYPE Release)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ..)
 
-project(napsac_all)
+project(napsac_memo)
 
 add_executable(main main.cpp)
 
