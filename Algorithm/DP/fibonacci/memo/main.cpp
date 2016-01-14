@@ -27,5 +27,8 @@ int main(int argc, char* argv[])
   cout << fib(n) << endl;
   cout << cnt << endl;
   
+  for(size_t i=0; i<dp.size(); i++)
+	cout << dp[i] << endl;
+  
   return 0;
 }
