@@ -1,21 +1,21 @@
-# Tokyo University Practice
+# Programing Practice
 
-### About
-このレポジトリは、東京大学大学院 情報理工学系研究科 創造情報学専攻 の院試勉強用に実装したアルゴリズムのレポジトリです。
-
-### Must
-レポジトリをダウンロードしたら、必ず以下のコマンドを入力して、コンパイルを行って下さい。
-
+### Compile
 ```bash
 cd <TokyoU-Practice>
 bash build.sh
 ```
 
 ### Algorithm
-現在、実装しているのは以下のアルゴリズムです。
+##### データ構造
 - ヒープ木
 - 二分探索木
 - Union-Find
 
+##### ソートアルゴリズム
 - バブルソート(Bubble Sort)
 - クイックソート(Quick Sort)
+
+##### 動的計画法
+- メモ化 (memo)
+- 漸化式 (loop)
