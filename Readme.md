@@ -2,7 +2,7 @@
 
 ### Compile
 ```bash
-cd <TokyoU-Practice>
+cd <Programming>
 bash build.sh
 ```
 
@@ -16,6 +16,8 @@ bash build.sh
 - バブルソート(Bubble Sort)
 - クイックソート(Quick Sort)
 
-##### 動的計画法
-- メモ化 (memo)
-- 漸化式 (loop)
+##### 動的計画法（メモ化・漸化式）
+- ナップザック
+- フィボナッチ数列
+
+
