@@ -10,18 +10,14 @@ vector<int> dp(n+1, -1);
 
 int fib(int req)
 {
-  int res;
-  if(req == 0) res = 0;
-  if(req == 1) res = 1;
-
+  dp[0] = 0;
+  dp[1] = 1;
   for(int i=2; i<=req; i++){
 	cnt++;
-	dp[i] = dp[req-1] + dp[req-2];
+	dp[i] = dp[i-1] + dp[i-2];
   }
-	
-  res = dp[i];
   
-  return res;
+  return dp[req];
 }
 
 int main(int argc, char* argv[])
