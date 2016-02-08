@@ -15,6 +15,7 @@ int main(int argc, char* argv[])
   // loop by empty
   while(!pque.empty()){
     // get maximum data and delete that
+	cout << pque.size() << endl; // Get the size
     cout << pque.top() << endl;  // get max data
     pque.pop();                  // delete max data
   }
