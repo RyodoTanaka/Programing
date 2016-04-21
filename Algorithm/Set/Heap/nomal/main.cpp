@@ -59,5 +59,16 @@ float pop(){
 
 int main(int argc, char *argv[])
 {
-  ;
+  push(5.4);
+  push(3);
+  push(2.3);
+  push(5.5);
+  push(3);
+
+  for(int i=0; i<5; i++){
+	cout << heap[0] << endl;
+	pop();
+  }
+   
+  return 0;
 }
