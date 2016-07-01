@@ -19,4 +19,9 @@ target_link_libraries(iterator_ex1 m)
 add_executable(iterator_ex2 iterator_ex2.cpp)
 target_link_libraries(iterator_ex2 m)
 
+add_executable(create_ex1 create_ex1.cpp)
+target_link_libraries(create_ex1 m)
+
+
+
 
