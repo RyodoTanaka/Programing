@@ -22,6 +22,11 @@ target_link_libraries(iterator_ex2 m)
 add_executable(create_ex1 create_ex1.cpp)
 target_link_libraries(create_ex1 m)
 
+add_executable(memory_ex1 memory_ex1.cpp)
+target_link_libraries(memory_ex1 m)
 
+add_executable(memory_ex2 memory_ex2.cpp)
+target_link_libraries(memory_ex2 m)
 
-
+add_executable(at_ex1 at_ex1.cpp)
+target_link_libraries(at_ex1 m)
