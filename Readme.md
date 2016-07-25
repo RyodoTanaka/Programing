@@ -1,12 +1,12 @@
 # Programing Practice
 
-### Build
+### Build All
 ```bash
 cd <Programming>
 source build-all.sh
 ```
 
-### Clean all
+### Clean All
 ```bash
 cd <Programming>
 source build-all.sh clean
