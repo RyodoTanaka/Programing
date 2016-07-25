@@ -1,23 +1,14 @@
 # Programing Practice
 
-### Compile
+### Build
 ```bash
 cd <Programming>
-bash build.sh
+source build-all.sh
 ```
 
-### Algorithm
-##### データ構造
-- ヒープ木
-- 二分探索木
-- Union-Find
-
-##### ソートアルゴリズム
-- バブルソート(Bubble Sort)
-- クイックソート(Quick Sort)
-
-##### 動的計画法（メモ化・漸化式）
-- ナップザック
-- フィボナッチ数列
-
+### Clean all
+```bash
+cd <Programming>
+source build-all.sh clean
+```
 
