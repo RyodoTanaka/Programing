@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.6)
 
-set(CMAKE_CPP_FLAGS_RELEASE "-Wall -O2 -std=c++11")
+set(CMAKE_CXX_FLAGS_RELEASE "-Wall -O2 -std=c++11")
 
-set(CMAKE_CPP_FLAGS_DEBUG "-g -O0")
+set(CMAKE_CXX_FLAGS_DEBUG "-g -O0")
 
 set(CMAKE_BUILD_TYPE Release)
 
@@ -30,3 +30,6 @@ target_link_libraries(memory_ex2 m)
 
 add_executable(at_ex1 at_ex1.cpp)
 target_link_libraries(at_ex1 m)
+
+add_executable(swap_ex1 swap_ex1.cpp)
+target_link_libraries(swap_ex1 m)

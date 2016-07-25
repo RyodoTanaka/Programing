@@ -14,7 +14,7 @@ int main(int argv, char* argc[])
   for(i=0; i<5; i++)
 	a.push_back('A' + i);
 
-  vector<char> d(a.begin()+1, a.end()-1);
+  vector<char> d(a.begin()+1, a.end());
 
   for(i=0; i<a.size(); i++)
 	cout << "a[" << i << "]: " << a[i] << "  ";
