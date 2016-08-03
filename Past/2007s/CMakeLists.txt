@@ -10,9 +10,12 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin)
 
 project(2007s)
 
-add_executable(1 1.cpp)
-target_link_libraries(1 m)
+add_executable(q1 q1.cpp)
+target_link_libraries(q1 m)
 
-add_executable(1_ex 1_ex.cpp)
-target_link_libraries(1_ex m)
+add_executable(q1-ex q1-ex.cpp)
+target_link_libraries(q1-ex m)
+
+add_executable(q21 q21.cpp)
+target_link_libraries(q21 m)
 
