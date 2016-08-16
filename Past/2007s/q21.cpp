@@ -31,11 +31,11 @@ int main(int argc, char* argv[])
   
   while(1){
 	// Get the data
-	getline(ifs, data);
 	if(!ifs.eof()){
 	  data.push_back('\n');
 	} else
 	  break;
+	getline(ifs, data);
 
 	// count
 	for(size_t i=0; i<data.size(); i++){

@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
   string key_buf(argv[1]);
-  int key = atoi(key_buf.c_str());
+  int key = stoi(key_buf);
   string raw_data;
   string trans_data;
   string buf;

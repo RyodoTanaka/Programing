@@ -8,7 +8,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
   string key_buf(argv[2]);
-  int key = atoi(key_buf.c_str());
+  int key = stoi(key_buf.c_str());
   ifstream ifs(argv[1], ios::in);
   string raw_data;
   string trans_data;
@@ -16,12 +16,12 @@ int main(int argc, char* argv[])
   
   while(1){
 	// Get the data
-	getline(ifs, buf);
 	if(!ifs.eof()){
 	  buf.push_back('\n');
 	  raw_data += buf;
 	} else
 	  break;
+	getline(ifs, buf);
 
 	// transform
 	for(size_t i=0; i<buf.size(); i++){
