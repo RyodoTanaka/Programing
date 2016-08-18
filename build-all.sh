@@ -20,6 +20,3 @@ elif [ $1 = "clean" ]; then
 else
 	echo " !!!! Error Unexpected option. Use \"clean\" option. !!!! "
 fi
-
-
-
