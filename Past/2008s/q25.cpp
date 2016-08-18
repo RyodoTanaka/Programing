@@ -68,15 +68,15 @@ bool getCluster(vector<double> &cluster, vector< vector<int> > G)
 	for(itr=G[i].begin(); itr<G[i].end(); itr++){
 	  for(itr2=G[i].begin(); itr2<G[i].end(); itr2++){
 		if(find(G[*itr].begin(),G[*itr].end(), *itr2) != G[*itr].end()){
-		  flg = true; // 連結があった
 		  sum++;
 		}
 	  }
 	}
 	sum /= 2.;
 	k = G[i].size();
-	if(k<=1)
+	if(k<=1){
 	  cluster[i] = 0.;
+	}
 	else{
 	  tmp = (k*(k-1))/2.;
 	  cluster[i] = sum/tmp;

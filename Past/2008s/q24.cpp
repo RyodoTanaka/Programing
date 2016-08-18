@@ -59,7 +59,6 @@ bool getCluster(vector<double> &cluster, vector< vector<int> > G)
   double sum = 0;    // 隣接頂点同士の隣接数の2倍の値
   double k = 0;      // 次数
   double tmp = 0;    // sum/2.取りうる値の最大値
-  bool flg = false;  // クラスタ係数0以外があったか(連結成分があったか)
 
   vector<int>::iterator itr;
   vector<int>::iterator itr2;
@@ -68,16 +67,17 @@ bool getCluster(vector<double> &cluster, vector< vector<int> > G)
 	for(itr=G[i].begin(); itr<G[i].end(); itr++){
 	  for(itr2=G[i].begin(); itr2<G[i].end(); itr2++){
 		if(find(G[*itr].begin(),G[*itr].end(), *itr2) != G[*itr].end()){
-		  flg = true; // 連結があった
 		  sum++;
 		}
 	  }
 	}
 	sum /= 2.;
 	k = G[i].size();
-	if(k<=1)
+	if(k<=1){
 	  cluster[i] = 0.;
+	}
 	else{
+	  cout << i << ", " << k << endl;
 	  tmp = (k*(k-1))/2.;
 	  cluster[i] = sum/tmp;
 	}
@@ -85,8 +85,6 @@ bool getCluster(vector<double> &cluster, vector< vector<int> > G)
 	k = 0;
 	tmp = 0;
   }
-
-  return flg;
 }
 
 struct binder{
