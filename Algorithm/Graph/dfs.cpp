@@ -6,6 +6,10 @@
 #include <string>
 #include <queue>
 
+#include <boost/graph/adjacency_list.hpp>
+#include <boost/graph/graph_utility.hpp>
+#include <boost/graph/graphviz.hpp>
+
 using namespace std;
 
 void getGraph(vector< vector<int> >&G, char* filename, int start, int goal)
@@ -64,30 +68,34 @@ ostream& operator<<(ostream& os, const vector< vector<int> >& g)
   return os;
 }
 
-int dfs(int v, vector<bool> &visit, const vector< vector<int> > G)
+int dfs(int v, queue<int> &root, vector<bool> &visit, const vector< vector<int> > G)
 {
   if(visit[v])  // 探索済み
 	return 0;
   else{         // 未探索
 	visit[v] = true;
-	cout << v << ", ";
+	root.push(v);
 	vector<int>::const_iterator itr;
 	for(itr=G[v].begin(); itr<G[v].end(); itr++){
 	  if(!visit[*itr])
-		dfs(*itr, visit, G);
+		dfs(*itr, root, visit, G);
 	}
 	return 0;
   }	
 }
 
-void DFS(const vector< vector<int> > G)
+queue<int> DFS(const vector< vector<int> > G)
 {
   vector<bool> visit(G.size(), false); // 初期化(すべて未探索)
+  queue<int> root;
   
-  dfs(0, visit, G);
-  cout << endl;
+  dfs(0, root, visit, G);
+
+  return root;
 }
 
+
+typedef boost::adjacency_list<boost::listS, boost::vecS, boost::directedS> Graph;
 const int V = 12;
 
 int main(int argc, char** argv)
@@ -96,5 +104,27 @@ int main(int argc, char** argv)
   G.resize(V);
   getGraph(G, argv[1], 0, 11);
   cout << G << endl;
-  DFS(G);
+  queue<int> root = DFS(G);
+  while(root.size()){
+  	cout << root.front() << ", ";
+  	root.pop();
+  }
+  cout << endl;
+
+  // = boost::graph ==================
+  Graph G_boost;
+  for(size_t i=0; i<G.size(); i++)
+	add_vertex(G_boost);
+
+  vector<int>::iterator itr;
+  for(size_t i=0; i<G.size(); i++){
+	for(itr=G[i].begin(); itr<G[i].end(); itr++)
+	  add_edge(i, *itr, G_boost);
+  }
+
+  boost::print_graph(G_boost);
+  ofstream file("../graph.dot");
+  boost::write_graphviz(file, G_boost);
+
+  return 0;
 }
