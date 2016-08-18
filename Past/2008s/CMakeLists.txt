@@ -25,6 +25,9 @@ target_link_libraries(q24-ex m)
 add_executable(q24-ex2 q24-ex2.cpp)
 target_link_libraries(q24-ex2 m)
 
-
 add_executable(q24 q24.cpp)
 target_link_libraries(q24 m)
+
+add_executable(q25 q25.cpp)
+target_link_libraries(q25 m)
+
