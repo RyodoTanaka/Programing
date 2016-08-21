@@ -19,3 +19,6 @@ project(Graph)
 
 add_executable(dfs dfs.cpp)
 target_link_libraries(dfs ${Boost_LIBRARIES} m)
+
+add_executable(dijkstra dijkstra.cpp)
+target_link_libraries(dijkstra ${Boost_LIBRARIES} m)
