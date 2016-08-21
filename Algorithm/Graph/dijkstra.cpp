@@ -115,8 +115,7 @@ void dijkstra(int s, const vector< vector<edge> > G)
 	que.pop();       // 取得したのでpop
 	int v = p.second;  // 注目する頂点を取得した仮の頂点に設定
 	if(d[v] < p.first) continue; // d[v]の更新が必要かどうか判定
-	vector<edge>::const_iterator itr;
-	for(itr=G[v].begin(); itr<G[v].end(); itr++){
+	for(vector<edge>::const_iterator itr=G[v].begin(); itr<G[v].end(); itr++){
 	  if(d[itr->to] > d[v] + itr->cost){
 		d[itr->to] = d[v] + itr->cost;
 		que.push(P(d[itr->to], itr->to));
@@ -149,7 +148,7 @@ int main(int argc, char** argv)
   }
 
   boost::print_graph(G_boost);
-  ofstream file("../dijekstra_graph.dot");
+  ofstream file("../dijkstra.dot");
   boost::write_graphviz(file, G_boost);
 
   return 0;
