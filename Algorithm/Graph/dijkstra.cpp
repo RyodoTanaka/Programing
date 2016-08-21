@@ -59,7 +59,8 @@ void getGraph(vector< vector<edge> >&G, char* filename, int start, int goal)
 	}
 
 	// 無向グラフの隣接リストを作成
-	edge tmp;
+	// 有向ぐらふなら一方だけ
+ 	edge tmp;
 	tmp.to = data[1] - 1;
 	tmp.cost = data[2];
 	G[data[0]-1].push_back(tmp);
@@ -80,7 +81,6 @@ void getGraph(vector< vector<edge> >&G, char* filename, int start, int goal)
 
 ostream& operator<<(ostream& os, const vector< vector<edge> >& g)
 {
-
   vector<edge>::const_iterator itr;
   for(size_t i=0; i<g.size(); i++){
 	os << "G[" << i << "] : "; 
@@ -93,7 +93,11 @@ ostream& operator<<(ostream& os, const vector< vector<edge> >& g)
 }
 
 
-typedef boost::adjacency_list<boost::listS, boost::vecS, boost::directedS> Graph;
+typedef boost::adjacency_list<boost::listS,
+							  boost::vecS,
+							  boost::directedS,
+							  boost::no_property,
+                              boost::property<boost::edge_weight_t, int>> Graph;
 const int V = 12;
 
 typedef pair<int, int> P; // first:最短距離，second:頂点の番号
@@ -134,19 +138,19 @@ int main(int argc, char** argv)
   dijkstra(0, G);
 
   // = boost::graph ==================
-  // Graph G_boost;
-  // for(size_t i=0; i<G.size(); i++)
-  // 	add_vertex(G_boost);
+  Graph G_boost;
+  for(size_t i=0; i<G.size(); i++)
+  	add_vertex(G_boost);
 
-  // vector<int>::iterator itr;
-  // for(size_t i=0; i<G.size(); i++){
-  // 	for(itr=G[i].begin(); itr<G[i].end(); itr++)
-  // 	  add_edge(i, *itr, G_boost);
-  // }
+  vector<edge>::iterator itr;
+  for(size_t i=0; i<G.size(); i++){
+  	for(itr=G[i].begin(); itr<G[i].end(); itr++)
+  	  add_edge(i, itr->to, itr->cost, G_boost);
+  }
 
-  // boost::print_graph(G_boost);
-  // ofstream file("../graph.dot");
-  // boost::write_graphviz(file, G_boost);
+  boost::print_graph(G_boost);
+  ofstream file("../dijekstra_graph.dot");
+  boost::write_graphviz(file, G_boost);
 
   return 0;
 }
