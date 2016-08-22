@@ -88,7 +88,7 @@ ostream& operator<<(ostream& os, const vector< vector<edge> >& g)
 }
 
 const int V = 12;  // 頂点の数
-const int E = 12;  // 辺の数
+const int E = 14;  // 辺の数
 
 typedef pair<int, int> P; // first:最短距離，second:頂点の番号
 
@@ -104,6 +104,8 @@ void bellman_ford(int s, const vector< vector<edge> > G)
 	  for(vector<edge>::const_iterator itr=G[i].begin(); itr<G[i].end(); itr++){
 		if(d[i] != INF && d[itr->to] > d[i] + itr->cost){
 		  d[itr->to] = d[i] + itr->cost;
+		  cout << i << " ";
+		  cout << "d[" << itr->to << "] : " << d[itr->to] << endl;
 		  update = true;
 		}
 	  }
@@ -116,6 +118,25 @@ void bellman_ford(int s, const vector< vector<edge> > G)
 	cout << "d[" << i << "] : " << d[i] << endl;
 }
 
+bool find_negative_loop(const vector< vector<edge> > G)
+{
+  vector<int> d(V);  // 最短コスト
+  fill(d.begin(), d.end(), 0);
+  
+  for(size_t i=0; i<G.size() ; i++){
+	for(vector<edge>::const_iterator itr=G[i].begin(); itr<G[i].end(); itr++){
+	  if(d[itr->to] > d[i] + itr->cost){
+		d[itr->to] = d[i] + itr->cost;
+		// V回目でも更新が発生したら、負の閉ループあり
+		cout << i << endl;
+		if(i == G.size()-1)
+		  return  true;
+	  }
+	}
+  }
+  return false;
+}
+
 int main(int argc, char** argv)
 {
   vector< vector<edge> > G;
@@ -123,6 +144,7 @@ int main(int argc, char** argv)
   getGraph(G, argv[1], 0, 11);
   cout << G << endl;
   bellman_ford(0, G);
+  // cout << find_negative_loop(G) << endl;
 
   return 0;
 }
