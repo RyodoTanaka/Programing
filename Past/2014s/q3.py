@@ -15,9 +15,8 @@ def calc(default, n):
         a.append(a[0]*(4.**(float(i))))
         b.append(b[0]*((1./3.)**(float(i))))
         c.append(c[i-1]+(b[i]**2.)*a[i-1])
-        print i, a[i], b[i], c[i]
     return default*c[-1]
     
     
 if __name__ == '__main__':
-    print calc(float(5.*5.*3.**(1./2.)), 2.)
+    print calc(float(5.*5.*3.**(1./2.)), 2)
