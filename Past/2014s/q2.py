@@ -16,7 +16,7 @@ def func(d):
                 cnt1+=1
     print "A(d,R0) = ", cnt0
     print "A(d,R1) = ", cnt1
-    return (float(cnt0)/float(cnt1))*(1./4.)
+    return (float(cnt1)/float(cnt0))*(1./4.)
     
 if __name__ == '__main__':
     print func(input())
