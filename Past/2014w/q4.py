@@ -19,4 +19,3 @@ def func(x):
 
 if __name__ == '__main__':
     print "{0:032d}".format(func(140))
-    
