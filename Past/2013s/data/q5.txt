@@ -1,0 +1,24 @@
+SET x 30
+SET y -4
+PRN x y
+SUB 3
+PRN x y
+JMP 18
+
+SET z 0
+ADD x z
+ADD y z
+PRN z 100
+SUB 3
+PRN 555 555
+BAK
+
+SET ant0 9
+SET ryodo 5
+SET SUM 0
+ADD ant0 SUM
+ADD ryodo SUM
+PRN SUM 10000
+BAK
+
+PRN 0 0
