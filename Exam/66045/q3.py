@@ -25,6 +25,7 @@ if __name__ == '__main__':
     del list[""]
     list_sorted = sorted(list.items(), key=lambda x: x[0])
     input_str=raw_input()
+    input_str=input_str.lower()
     print_flg=False
     print_str=str()
     # まず一致する場合を考える
