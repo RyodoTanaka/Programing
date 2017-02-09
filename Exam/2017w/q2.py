@@ -16,9 +16,6 @@ if __name__ == '__main__':
             if (ord("a") <= ord(line[i][j]) and ord(line[i][j]) <= ord("z")) or (ord("A") <= ord(line[i][j]) and ord(line[i][j]) <= ord("Z")):
                 buf=buf + line[i][j]
             else:
-                if buf=="":
-                    buf=""
-                    continue
                 if buf in list:
                     list[buf]+=1
                 else :
@@ -27,6 +24,7 @@ if __name__ == '__main__':
 
     # print list
     # print len(list)
+    del list[""]
     cnt=0
     for k, v in sorted(list.items(), key=lambda x: x[1], reverse=True):
         if cnt<5:
