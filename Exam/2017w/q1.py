@@ -16,14 +16,12 @@ if __name__ == '__main__':
             if (ord("a") <= ord(line[i][j]) and ord(line[i][j]) <= ord("z")) or (ord("A") <= ord(line[i][j]) and ord(line[i][j]) <= ord("Z")):
                 buf=buf + line[i][j]
             else:
-                if buf=="":
-                    buf=""
-                    continue
                 if buf in list:
                     list[buf]+=1
                 else :
                     list[buf]=1
                 buf=""
 
+    del list[""]
     print list
     print len(list)
