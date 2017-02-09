@@ -14,7 +14,7 @@ if __name__ == '__main__':
         line[i]+=" "
         for j in range(len(line[i])):
             if (ord("a") <= ord(line[i][j]) and ord(line[i][j]) <= ord("z")) or (ord("A") <= ord(line[i][j]) and ord(line[i][j]) <= ord("Z")):
-                buf=buf + line[i][j]
+                buf=buf + line[i][j].lower()
             else:
                 if buf in list:
                     list[buf]+=1
